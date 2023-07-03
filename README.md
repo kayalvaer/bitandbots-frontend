@@ -2,7 +2,7 @@
 
 
 
-![image](https://github.com/Noroff-FEU-Assignments/js-frameworks-course-assignment-kayalvaer/blob/main/ca-js-fo/public/pics/cover.jpg)
+![image](https://github.com/kayalvaer/bitandbots-frontend/blob/main/src/assets/bitbotgames.png)
 
 A simple overview of the use/purpose of the project.
 
