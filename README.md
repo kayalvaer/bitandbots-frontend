@@ -8,35 +8,33 @@ A simple overview of the use/purpose of the project.
 
 ## Description
 
-Javascript Frameworks CA project, is part of the requirement to test student skills as part of our software
-development qualification at Noroff College.Developed with creating an online ecommerce website where
-users can view products, but products and make wishlist on required products. Admin is able to log in and add new products, view ordered list and details o customers. CRUD functionality applied throughout the website.
-This report will outline the project plan and why I made them and how I came around to
-implement.
+Project Exam 2 submission task, is a part of the requirement to test our software
+development qualification at Noroff Institute.Managed to develop a fullstack website developed with React, fetching data from
+Strapi API and using Material Ui for styling.Allows users to access information about open source free games and providing
+links for authorised users to access the game.
+The goal was to create a new video game store website called Bits & Bots. The owners want only registered users to be able to browse the site. The site must be responsive and work on all device sizes.
 
-User Stories:
+Outline the project plan and why I made them and how I came around to implement.
 
-- As a admin, I want to be able to log in and add new products, so
-that I can make them available for customers.
-- As a admin, I want to be able to be able to ordered list,
-- As a user, I want to be able to be able my ordered list and wishlist,
-- As a user, I want to be able to search the site for products
-mentioning the keyword(s) they have used to search.
-- As a user I want to be able to add my details quick so that I dont waste time.
-- As a user I want to be able to use categories to filter products.
-- As a user I want to be able to see product detailed description, to ensure the content and quality of products.
-- As a user I want to see the title of the products.
-- As a developer I want to be Authenticated developers for the
-news site to be able to log into an admin panel and on
-this panel they are able to add, edit and delete products.
-- As a developer, I want the products to at least have a: title,
-featured image, content, and categories and detail page.
+## User Stories:
+
+- As a developer, I want users to be able to be able to register, login, edit and delete my profile in the new game site,
+- As a user, I want to be able to be view a list of free online games,
+- As a user, I want to be able to search for the game quickly by mentioning the keyword(s) they have used to search.
+- As a user I want to be able to click game link and excess it online.
+- As a user I want to view Game title , description and any important information about the games.
+- As a user I want to be able to categories games by the game types.
+- As a user I want to be able to see game detailed description, to ensure the content and quality of the game is what i wanted.
+- As a user I want to see the title and description of the game clear.
+- As a developer I want to be Authenticated developers for the game site.
+
 
 ### Planning Applications
 
 - Trello
 - GitHub Projects
 - Gantt Charts
+- Process Flow
 
 ## Teck Stack Built With
 
@@ -77,7 +75,7 @@ manually tested them. that allowed
 HTML5 code.
 - W3C CSS validator
 • The W3C CSS validator is used to check errors in the CSS3 code.
-- Joshing
+- JShint
 • JShint is a JavaScript validator is used to check any errors in the JavaScript
 code.
 
@@ -96,37 +94,26 @@ website to help me with the development roadmap.And then created tasks based on 
 
 How to get the project started. First clone the repo and then to install the dependencies e.g.
 
-1. Clone the repo:
-
-```bash
-git clone git@github.com:NoroffFEU/portfolio-1-example.git
-```
-
-2. Install the dependencies:
-
-```
-npm install
+1. Run repository:
 
 There are no special requirements to run the project locally. This is a NextJS project made with create next app.
 
 
 1. To run the app, run the local dev server:
-npm run dev
 
-2. Open the local application in your browser (default port 3000):
-http://localhost:3000
-
-```
-
-### Running
-
-To run the NextJS app use the commands below and run to start the project:
+To run the ReactJS app use the commands below and run to start the project:
 
 Run the following commands on the terminal:
 
 ```bash
 npm run start
 ```
+
+2. Open the local application in your browser (default port 3000):
+http://localhost:3000
+
+```
+
 
 ## Contributing
 
@@ -146,82 +133,66 @@ on the lighthouse suggested points of improvement.
 
 ## Brief
 
-Create either a new React or Next.js app in this repo.
-
-For the login functionality, use either a Wordpress installation with the <a href="https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/" target="_blank">JWT plugin from Module 3</a> installed, or a Strapi installation. Do not add either of these to your repo. Your API should remain a separate project. The markers will use their own installations when marking.
-
-You can use either a REST or GraphQL API for the API calls.
+Create either a new React app.
 
 ---
 
-## Level 1
+## Landing page
 
-Your app should have the following paths:
+The landing page must include either a fullscreen video or slide show. Make sure you are allowed to use the video or images you source for this.
+The site requires registration and there must be two tabs in the middle of this page:
+1. Login
+2. Register
+The register tab must hold a form with email address and password inputs. Submitting the form must validate the inputs and write the values to localStorage.
+The login tab form must also contain email and password inputs and on submit check the values against those stored in localStorage. If the values match, the user will be redirected to the browse page, otherwise an “Incorrect username or password” message must be displayed.
 
--   "/"
--   "/detail/:param"
--   "/contact"
--   "/login"
--   "/admin"
+## Browse page
 
-The admin path won't appear in your navigation.
+When first loading the browse page, an API call will be made to load a list of games. A loading indicator must be displayed while the API call is in progress.
+Once the call is complete, the page must display the list of games as items in columns and rows. The title and image of each games must be displayed.
+At the top of the page will be a list of genres as tags, tabs or menu items. Clicking on a genre will load games of that specific genre.
+Each item must have a more info or details link. Clicking this will take the user to the details page with the id of the game in the url, e.g. /details/5
+Somewhere on each game item there must be a favourite or add-to-cart icon button. Clicking on the icon must add the game info in an object to an array in localStorage. This will act as the site’s shopping cart. Clicking it again will remove it from the cart. The icon must indicate whether or not it is in the cart.
+At the top of the browse page there must be a view cart button which takes the user to the cart page.
 
-Use reusable components where appropriate and pay attention to how the components are arranged.
+## Details page
 
-### Home
+This page must retrieve the id from the url and make an API call to fetch the details for this game using the id.
+The student can decide which fields to display from the API call result.
+The page must also include the favourite/add-to-cart icon and functionality.
 
-Find an API that returns at least:
+## Cart page
 
--   an array of items
--   a single item retrieved by a parameter (id, name, slug, etc)
+The cart page must display the list of games stored in the localStorage cart. All info for this list must be retrieved from the cart. A remove button must exist on each item. Clicking this will remove the game from the list and from localStorage.
+If there are no items in the cart the page must display a relevant message.
+A check out button on this page will take the user to the check out page. If there are no items in the cart this button must be disabled.
 
-If you are using Next you can also hard-code json and return it from API routes created in `pages/api/*`.
+## Check out page
 
-You can use your own Wordpress or Strapi or any other API that you have created for these calls but it must be publically hosted - it must not be running on your localhost.
+This page will have a form with inputs for the user’s name, address and credit card details. Relevant validation must exist on each input.
+Above the form the page must display the number of items in the cart.
+If the input values all pass validation, the submit button must open a modal to confirm payment. Once confirmed, the cart array will be emptied and the user redirected to the browse page.
 
-Display at least 2 properties from each result.
+## Common page elements
 
-Each result should link to the detail page, passing a parameter in the URL.
+• A log out button which will clear all information stored in localStorage and redirect the user to the landing page
+• Suggested: A breadcrumb element to make navigation easier
 
-### Detail
+## API
+Deploy your own API. You can use Strapi, WordPress API or another Headless CMS.
 
-Retrieve the parameter from the URL and use it in an API call to fetch one item.
+## Component library
 
-Display at least 3 properties from the item.
+Consider using a component library like Bootstrap for your project
 
-### Contact
 
-Create a form with the following inputs and validation:
+## Process
 
--   First name - required, minimum 3 characters
--   Last name - required, minimum 4 characters
--   Email - required, must be in a valid email format
--   Subject - required, this must be a select box with at least 2 options
--   Message - required, minimum 10 characters.
+- Week 1 and 2: Planning and Design
+- Week 3 to 6: Coding
+- Week 7: Bug Fixing
 
-### Login
-
-Create a form with username/email and password fields. The inputs should have the necessary validation for a login form (not a registration form).
-
-The form should make a login request to either a Wordpress API with the JWT plugin installed or a Strapi API. If the login is successful redirect the user to the admin route.
-
-If the login is unsuccessful display a message above the form.
-
-### Admin
-
-This page will simply display an "Admin" heading.
-
----
-
-## Level 2
-
-Add a favourite button/icon component to each result on your home page. Clicking this button will toggle the result in/out of a favourites array.
-
-Add a "/favourites" path to your routes. This page will display all the items currently in the favourites array.
-
-## Contact
-
-This is where you can leave your social links for people to contact you, such as a LinkedIn profile or Twitter link e.g.
+## Social media links for people for contact
 
 [Github Account](https://github.com/kayalvaer)
 [Twitter Account](https://twitter.com/KayAlvaer)
@@ -256,6 +227,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Delivery
 
-Include the deploying to provided link in the Moodle delivery window using [Delivery repo](https://github.com/Noroff-FEU-Assignments/js-frameworks-course-assignment-kayalvaer.git).
+Include the deploying to provided link in the Moodle delivery window using [Delivery repo](https://github.com/kayalvaer/bitandbots-frontend).
 
 All final changes must be merged into the default branch `main` or `master`. Other branches will not be checked.
