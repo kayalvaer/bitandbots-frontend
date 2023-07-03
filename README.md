@@ -1,5 +1,5 @@
-# Second@Best Store
 
+# Bits & Bots video game store
 
 
 ![image](https://github.com/kayalvaer/bitandbots-frontend/blob/main/src/assets/bitbotgames.png)
